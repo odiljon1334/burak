@@ -1,0 +1,20 @@
+{
+  "name": "burak",
+  "version": "1.0.0",
+  "description": "This burak project backend",
+  "main": "src/server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James MIT-15",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
