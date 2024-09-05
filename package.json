@@ -19,6 +19,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "dotenv": "^16.0.0",
     "moment": "^2.30.1"
   }
 }
