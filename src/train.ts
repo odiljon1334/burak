@@ -1,13 +1,23 @@
 console.log("TRAIN AREA!");
+// H2-TASK
+// Define 
+function getDigits(str: string) {
+    // replace methodida /\D raqam bo'lmagan barcha elementlarni olib tashlayi 
+    // replace methodida /\d esa raqamlarni olib tashlaydi
+    // replace '' bo'sh string biz hosil qilmoqchi bo'lgan qiymatni o'zini chiqarib beradi.
+    return str.replace(/\D/g, '');    
+}
+const result = getDigits("m14i1t");
+console.log('H2-TASK:', result);
 
 // H-TASK
 //define
-function getPositive(arrInt: number[]) {
-    const arr = arrInt.filter(num => num > 0).join('');
-    return arr;
-}
-const result = getPositive([1, -4, 2]);
-console.log('H-TASK:', result);
+// function getPositive(arrInt: number[]) {
+//     const arr = arrInt.filter(num => num > 0).join('');
+//     return arr;
+// }
+// const result = getPositive([1, -4, 2]);
+// console.log('H-TASK:', result);
 
  // G-TASK
  // Define
