@@ -1,3 +1,4 @@
+console.log("TRAIN AREA!");
 /* Project Standards:
     -Logging Standards
     -Naming Standards
@@ -5,12 +6,7 @@
     class => PascalCase
     folder => KEBAB-CASE
     css => sake_case
-
 */
-console.log("TRAIN AREA!");
-
-
-
 
 // H2-TASK
 // Define 
