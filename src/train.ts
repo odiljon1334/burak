@@ -14,16 +14,26 @@ console.log("TRAIN AREA!");
     Graphql Api
     ...
 */
+// I-TASK
+// Define
+function majorityElement(arr: number[]) {
+    return arr.sort((arr1) =>
+        arr.filter(ele => ele === arr1).length
+    )[arr.length - 1];
+}
+//Call
+const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
+console.log('I-TASK:', result);
 // H2-TASK
 // Define 
-function getDigits(str: string) {
-    // replace methodida /\D raqam bo'lmagan barcha elementlarni olib tashlayi 
-    // replace methodida /\d esa raqamlarni olib tashlaydi
-    // replace '' bo'sh string biz hosil qilmoqchi bo'lgan qiymatni o'zini chiqarib beradi.
-    return str.replace(/\D/g, '');
-}
-const result = getDigits("m14i1t");
-console.log('H2-TASK:', result);
+// function getDigits(str: string) {
+//     // replace methodida /\D raqam bo'lmagan barcha elementlarni olib tashlayi 
+//     // replace methodida /\d esa raqamlarni olib tashlaydi
+//     // replace '' bo'sh string biz hosil qilmoqchi bo'lgan qiymatni o'zini chiqarib beradi.
+//     return str.replace(/\D/g, '');
+// }
+// const result = getDigits("m14i1t");
+// console.log('H2-TASK:', result);
 
 // H-TASK
 //define
