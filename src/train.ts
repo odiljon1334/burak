@@ -1,4 +1,17 @@
+/* Project Standards:
+    -Logging Standards
+    -Naming Standards
+    function, method, variable => camalCase
+    class => PascalCase
+    folder => KEBAB-CASE
+    css => sake_case
+
+*/
 console.log("TRAIN AREA!");
+
+
+
+
 // H2-TASK
 // Define 
 function getDigits(str: string) {
