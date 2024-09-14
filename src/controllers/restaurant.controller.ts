@@ -4,7 +4,8 @@ import MemberService from "../models/Member.service";
 import { LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member. enum";
 
-
+const memberService = new MemberService();
+/** SSR */
 
 const restaurantController: T = {}
 restaurantController.goHome = (req: Request, res: Response) => {
@@ -35,35 +36,33 @@ restaurantController.getSignup = (req: Request, res: Response) => {
     }
 };
 
-restaurantController.processLogin = async (req: Request, res: Response) => {
+restaurantController.processSignup = async (req: Request, res: Response) => {
     try {
-        console.log('ProcessLogin');
-        console.log('body:', req.body);
-        const input: LoginInput = req.body;
+        console.log('ProcessSignup');
 
-        const memberService = new MemberService();
-        const result = await memberService.processLogin(input)
+        const newMember: MemberInput = req.body;
+        newMember.memberType = MemberType.RESTAURANT
+        const result = await memberService.processSignup(newMember);
+        // TODO: TOKENS AUTHENTICATION
 
         res.send(result);
     } catch (err) {
-        console.log("ERROR , processLogin:", err);
+        console.log("ERROR , processSignup:", err);
         res.send(err);
     }
 };
 
-restaurantController.processSignup = async (req: Request, res: Response) => {
+restaurantController.processLogin = async (req: Request, res: Response) => {
     try {
-        console.log('ProcessSignup');
-        console.log('body:', req.body);
+        console.log('ProcessLogin');
 
-        const newMember: MemberInput = req.body;
-        newMember.memberType = MemberType.RESTAURANT
+        const input: LoginInput = req.body;
+        const result = await memberService.processLogin(input);
+        // TODO: TOKENS AUTHENTICATION
 
-        const memberService = new MemberService();
-        const result = await memberService.processSignup(newMember);
         res.send(result);
     } catch (err) {
-        console.log("ERROR , processSignup:", err);
+        console.log("ERROR , processLogin:", err);
         res.send(err);
     }
 };

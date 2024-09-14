@@ -14,6 +14,13 @@ console.log("TRAIN AREA!");
     Graphql Api
     ...
 */
+
+/*
+    Traditional FrontEnd Development => BSSR (Admin) => EJS
+    Modern FrontEnd Development => SPA (Users) => REACT
+*/
+
+
 // I-TASK
 // Define
 function majorityElement(arr: number[]) {
