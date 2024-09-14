@@ -9,7 +9,7 @@ console.log("TRAIN AREA!");
 */
 
 /*
-    Traditional Api 
+    Traditional Api
     Rest Api
     Graphql Api
     ...
@@ -20,17 +20,30 @@ console.log("TRAIN AREA!");
     Modern FrontEnd Development => SPA (Users) => REACT
 */
 
+// J-TASK
+//Define
+function findLongestWord(str: string) {
+    // Bu yerda split(' ') methodi bizga str ni bo'sh joylar orqali bo'lib 
+    // bizga array qaytaradi ["I", "come", "from", "Uzbekistan"]
+    return str.split(' ').sort((str1, str2) => str2.length - str1.length)[0];
+    // sort() methodi yordamida arrayni ichidagi so'zlarni uzunligiga qarab tartiblab beryapti
+    // ["Uzbekistan", "come", "from", "I"] 
+    // Va bizni misolda arrayni ichidagi eng uzun so'z arrayni [0] chi indexga to'g'ri keladi.
+}
+// Call
+const result = findLongestWord("I come from Uzbekistan");
+console.log('J-TASK:', result);
 
 // I-TASK
 // Define
-function majorityElement(arr: number[]) {
-    return arr.sort((arr1) =>
-        arr.filter(ele => ele === arr1).length
-    )[arr.length - 1];
-}
-//Call
-const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
-console.log('I-TASK:', result);
+// function majorityElement(arr: number[]) {
+//     return arr.sort((arr1) =>
+//         arr.filter(ele => ele === arr1).length
+//     )[arr.length - 1];
+// }
+// //Call
+// const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
+// console.log('I-TASK:', result);
 // H2-TASK
 // Define 
 // function getDigits(str: string) {
