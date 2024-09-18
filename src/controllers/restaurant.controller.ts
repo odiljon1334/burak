@@ -11,6 +11,7 @@ const restaurantController: T = {}
 restaurantController.goHome = (req: Request, res: Response) => {
     try {
         console.log('goHome');
+        console.log()
         res.render('home');
         // send | json | redirect | end | render
     } catch (err) {
@@ -39,7 +40,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
 restaurantController.processSignup = async (req: Request, res: Response) => {
     try {
         console.log('ProcessSignup');
-
+        console.log('body:', req.body);
         const newMember: MemberInput = req.body;
         newMember.memberType = MemberType.RESTAURANT
         const result = await memberService.processSignup(newMember);
