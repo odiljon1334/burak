@@ -20,19 +20,36 @@ console.log("TRAIN AREA!");
     Modern FrontEnd Development => SPA (Users) => REACT
 */
 
-// J-TASK
-//Define
-function findLongestWord(str: string) {
-    // Bu yerda split(' ') methodi bizga str ni bo'sh joylar orqali bo'lib 
-    // bizga array qaytaradi ["I", "come", "from", "Uzbekistan"]
-    return str.split(' ').sort((str1, str2) => str2.length - str1.length)[0];
-    // sort() methodi yordamida arrayni ichidagi so'zlarni uzunligiga qarab tartiblab beryapti
-    // ["Uzbekistan", "come", "from", "I"] 
-    // Va bizni misolda arrayni ichidagi eng uzun so'z arrayni [0] chi indexga to'g'ri keladi.
+/*
+    Cookies
+  request + join qiladi.
+  Self Destroy => O'zini o'zi yo'q qolish hususiyatiga ega.
+*/
+
+//K-TASK
+// Define
+function countVowels(str: string) {
+    let isStr = "aieouAIUOE";
+    return str.split('').filter(ele => isStr.includes(ele)).length;
 }
 // Call
-const result = findLongestWord("I come from Uzbekistan");
-console.log('J-TASK:', result);
+const result = countVowels("string");
+console.log('K-TASK:', result);
+
+
+// J-TASK
+//Define
+// function findLongestWord(str: string) {
+//     // Bu yerda split(' ') methodi bizga str ni bo'sh joylar orqali bo'lib 
+//     // bizga array qaytaradi ["I", "come", "from", "Uzbekistan"]
+//     return str.split(' ').sort((str1, str2) => str2.length - str1.length)[0];
+//     // sort() methodi yordamida arrayni ichidagi so'zlarni uzunligiga qarab tartiblab beryapti
+//     // ["Uzbekistan", "come", "from", "I"] 
+//     // Va bizni misolda arrayni ichidagi eng uzun so'z arrayni [0] chi indexga to'g'ri keladi.
+// }
+// // Call
+// const result = findLongestWord("I come from Uzbekistan");
+// console.log('J-TASK:', result);
 
 // I-TASK
 // Define
