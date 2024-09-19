@@ -5,13 +5,14 @@ import routerAdmin from "./router-admin";
 import morgan from "morgan";
 import { MORGAN_FORMAT } from "./libs/config";
 
-import session, { Session } from "express-session";
+import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
 
 const MongoDBStore = ConnectMongoDB(session);
+// Bu yerda MongoDBStore class'sidan  (namuna)  instance olyapmiz
 const store = new MongoDBStore({
-    uri: String(process.env.MONGO_URL),
-    collection: 'sessions',
+    uri: String(process.env.MONGO_URL),// mongoDbga ulanish
+    collection: 'sessions', // MongoDB Databasesimizda session xosil qilib beradi.
 });
 
 /** 1-ENTRANCE **/
@@ -33,7 +34,7 @@ app.use(
         resave: true, // Agar false bo'lsa  10:30 da uath => 13:30 auth tugaydi. 12:00 da saytga qayta kirsak auth yangilanmaydi.
         saveUninitialized: true
     })
-)
+);
 
 /** 3-VIEWS **/
 app.set('views', path.join(__dirname, 'views'));

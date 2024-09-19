@@ -1,7 +1,7 @@
 import MemberModel from "../schema/Member.model";
 import { LoginInput, Member, MemberInput } from "../libs/types/member";
 import Errors, { HttpCode, Message } from "../libs/Errors";
-import { MemberType } from "../libs/enums/member. enum";
+import { MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
 
 class MemberService {
@@ -19,7 +19,7 @@ class MemberService {
         try {
             const result = await this.memberModel.create(input);
             result.memberPassword = '';
-            return result.toJSON();
+            return result;
         } catch (err) {
             console.error('Error, model:signup', err);
             throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE);
@@ -56,10 +56,8 @@ class MemberService {
             .exec();
         if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
 
-        console.log('salt:', input.memberPassword);
         const salt = await bcrypt.genSalt();
         input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
-        console.log('salt:', input.memberPassword);
 
         try {
             const result = await this.memberModel.create(input);
