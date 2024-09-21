@@ -21,7 +21,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(morgan(MORGAN_FORMAT))
+app.use(morgan(MORGAN_FORMAT));
 
 /** 2-SESSIONS **/
 app.use(
@@ -32,7 +32,7 @@ app.use(
         },
         store: store,
         resave: true, // Agar false bo'lsa  10:30 da uath => 13:30 auth tugaydi. 12:00 da saytga qayta kirsak auth yangilanmaydi.
-        saveUninitialized: true
+        saveUninitialized: true,
     })
 );
 
