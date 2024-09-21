@@ -7,6 +7,7 @@ import { MORGAN_FORMAT } from "./libs/config";
 
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
+import { T } from "./libs/types/common";
 
 const MongoDBStore = ConnectMongoDB(session);
 // Bu yerda MongoDBStore class'sidan  (namuna)  instance olyapmiz
@@ -35,6 +36,12 @@ app.use(
         saveUninitialized: true,
     })
 );
+
+app.use(function(req, res, next) {
+    const sessionInstanc = req.session as T;
+    res.locals.member = sessionInstanc.member;
+    next();
+})
 
 /** 3-VIEWS **/
 app.set('views', path.join(__dirname, 'views'));
