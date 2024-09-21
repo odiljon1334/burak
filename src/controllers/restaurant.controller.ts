@@ -53,7 +53,6 @@ restaurantController.processSignup = async (
         // TODO: TOKENS AUTHENTICATION
 
         req.session.member = result;
-        console.log(req.session)
         req.session.save(function () {
             res.send(result)
 

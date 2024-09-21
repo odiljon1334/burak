@@ -8,34 +8,50 @@ console.log("TRAIN AREA!");
     css => sake_case
 */
 
-/*
+/* Request:
     Traditional Api
     Rest Api
     Graphql Api
     ...
 */
 
-/*
+/* FrontEnd Development:
     Traditional FrontEnd Development => BSSR (Admin) => EJS
     Modern FrontEnd Development => SPA (Users) => REACT
 */
 
-/*
-    Cookies
+/* Cookies:
   request + join qiladi.
   Self Destroy => O'zini o'zi yo'q qolish hususiyatiga ega.
 */
 
+/** Validation:
+    FrontEnd validation,
+    BackEnd validation,
+    Database validation.
+*/
+
+// L-TASK
+// Define
+function reverseSentence(str: string) {
+    const isReverse = str.split(' ');
+    let sentence =  isReverse.map(ele => ele.split('').reverse().join(''));
+
+    return sentence.join(' ');
+}
+//Call
+const result = reverseSentence("we like coding!");
+console.log('L-TASK:', result);
+
 //K-TASK
 // Define
-function countVowels(str: string) {
-    let isStr = "aieouAIUOE";
-    return str.split('').filter(ele => isStr.includes(ele)).length;
-}
-// Call
-const result = countVowels("string");
-console.log('K-TASK:', result);
-
+// function countVowels(str: string) {
+//     let isStr = "aieouAIUOE";
+//     return str.split('').filter(ele => isStr.includes(ele)).length;
+// }
+// // Call
+// const result = countVowels("string");
+// console.log('K-TASK:', result);
 
 // J-TASK
 //Define
