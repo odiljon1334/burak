@@ -30,18 +30,31 @@ console.log("TRAIN AREA!");
     BackEnd validation,
     Database validation.
 */
+// M-TASK
+// Define
+function getSquareNumbers(arr: number[]) {
+    return arr.map(ele => ({
+        number: ele,
+        square: ele * ele
+    }));
+}
+
+// Call
+const result = getSquareNumbers([1, 2, 3]);
+console.log('M-TASK:', result);
+
 
 // L-TASK
 // Define
-function reverseSentence(str: string) {
-    const isReverse = str.split(' ');
-    let sentence =  isReverse.map(ele => ele.split('').reverse().join(''));
+// function reverseSentence(str: string) {
+//     const isReverse = str.split(' ');
+//     let sentence =  isReverse.map(ele => ele.split('').reverse().join(''));
 
-    return sentence.join(' ');
-}
-//Call
-const result = reverseSentence("we like coding!");
-console.log('L-TASK:', result);
+//     return sentence.join(' ');
+// }
+// //Call
+// const result = reverseSentence("we like coding!");
+// console.log('L-TASK:', result);
 
 //K-TASK
 // Define
