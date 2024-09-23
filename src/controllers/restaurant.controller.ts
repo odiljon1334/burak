@@ -51,7 +51,7 @@ restaurantController.processSignup = async (
             throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
         
         const newMember: MemberInput = req.body;
-        newMember.memberImage = file?.path;
+        newMember.memberImage = file?.path.replace(/\\/g, '/'); // regular expression;
         console.log(newMember);
         
         newMember.memberType = MemberType.RESTAURANT;
