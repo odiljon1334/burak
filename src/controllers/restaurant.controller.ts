@@ -3,7 +3,7 @@ import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import Errors, { Message } from "../libs/Errors";
+import Errors, { HttpCode, Message } from "../libs/Errors";
 
 const memberService = new MemberService();
 /** SSR */
@@ -46,8 +46,12 @@ restaurantController.processSignup = async (
 ) => {
     try {
         console.log('ProcessSignup');
-
+        const file = req.file;
+        if(!file) 
+            throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
+        
         const newMember: MemberInput = req.body;
+        newMember.memberImage = file?.path;
         console.log(newMember);
         
         newMember.memberType = MemberType.RESTAURANT;
@@ -56,7 +60,7 @@ restaurantController.processSignup = async (
 
         req.session.member = result;
         req.session.save(function () {
-            res.send(result)
+            res.redirect("/admin/product/all");
 
         });
     } catch (err) {
@@ -84,7 +88,7 @@ restaurantController.processLogin = async (
 
         req.session.member = result; // resultda qaytgan qiymatni req.session.memberga tenglab olyapmiz. 
         req.session.save(function () {
-            res.send(result)
+            res.redirect("/admin/product/all");
         });
     } catch (err) {
         console.log("ERROR , processLogin:", err);
