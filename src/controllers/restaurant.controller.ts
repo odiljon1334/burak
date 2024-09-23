@@ -48,6 +48,8 @@ restaurantController.processSignup = async (
         console.log('ProcessSignup');
 
         const newMember: MemberInput = req.body;
+        console.log(newMember);
+        
         newMember.memberType = MemberType.RESTAURANT;
         const result = await memberService.processSignup(newMember);
         // TODO: TOKENS AUTHENTICATION
