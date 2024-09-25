@@ -8,6 +8,7 @@ const routerAdmin = express.Router();
 
 /** Restaurant */
 routerAdmin.get('/', restaurantController.goHome);
+
 routerAdmin
     .get('/login', restaurantController.getLogin)
     .post('/login', restaurantController.processLogin);
@@ -19,6 +20,7 @@ routerAdmin
      restaurantController.processSignup);
 
 routerAdmin.get('/logout', restaurantController.logout);
+
 routerAdmin.get('/check-me', restaurantController.checkAuthSession);
 
 /** Product */
@@ -36,6 +38,12 @@ routerAdmin.post('/product/:id',
     productController.updateChosenProducrt
 );
 /** User */
-routerAdmin.get('/user/all', restaurantController.verifyRestaurant, restaurantController.getUsers);
+routerAdmin.get('/user/all', 
+    restaurantController.verifyRestaurant, 
+    restaurantController.getUsers);
+
+routerAdmin.post('/user/edit', 
+    restaurantController.verifyRestaurant, 
+    restaurantController.updateChosenUser);
 
 export default routerAdmin;
