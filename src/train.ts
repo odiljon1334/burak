@@ -30,18 +30,34 @@ console.log("TRAIN AREA!");
     BackEnd validation,
     Database validation.
 */
+
+// N-TASK
+// Define
+
+function palindromCheck(str: string) {
+    // Stringni kichik harflarga o'tkazamiz va bo'sh joylar hamda boshqa belgilarni olib tashlaymiz
+    const newPalindrom = str.toLocaleLowerCase().replace(/[^a-z0-9]/g, '');
+    //  Stringni harflarga bo'lib, teskari qilib, keyin yana stringga birlashtiramiz.
+    const newReverse = newPalindrom.split('').reverse().join('');
+    // Asl string va teskari o'qilgan stringni taqqoslaymiz. Agar ular teng bo'lsa, true qaytadi, aks holda false.
+    return newReverse === newPalindrom;
+}
+// Call
+const result = palindromCheck("son");
+console.log('N-TASK:', result);
+
 // M-TASK
 // Define
-function getSquareNumbers(arr: number[]) {
-    return arr.map(ele => ({
-        number: ele,
-        square: ele * ele
-    }));
-}
+// function getSquareNumbers(arr: number[]) {
+//     return arr.map(ele => ({
+//         number: ele,
+//         square: ele * ele
+//     }));
+// }
 
-// Call
-const result = getSquareNumbers([1, 2, 3]);
-console.log('M-TASK:', result);
+// // Call
+// const result = getSquareNumbers([1, 2, 3]);
+// console.log('M-TASK:', result);
 
 
 // L-TASK
