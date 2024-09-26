@@ -69,7 +69,7 @@ restaurantController.processSignup = async (
         res.send(`
             <script>
               alert("${message}");
-              window.location.replace('admin/signup')
+              window.location.replace('/admin/signup')
             </script>`
         );
     }
@@ -96,7 +96,7 @@ restaurantController.processLogin = async (
         res.send(`
             <script>
               alert("${message}");
-              window.location.replace('admin/login')
+              window.location.replace('/admin/login')
             </script>`
         );
     }
