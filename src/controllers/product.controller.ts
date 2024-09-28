@@ -43,7 +43,7 @@ productController.createNewProduct = async (
         res.send(`
             <script>
               alert("Sucessfuly creation!");
-              window.location.replace('admin/product/all')
+              window.location.replace('/admin/product/all')
             </script>`
         );
     } catch (err) {
@@ -52,7 +52,7 @@ productController.createNewProduct = async (
         res.send(`
             <script>
               alert("${message}");
-              window.location.replace('admin/product/all')
+              window.location.replace('/admin/product/all')
             </script>`
         );
     }
