@@ -17,6 +17,7 @@ productController.getAllProducts = async (req: Request, res: Response) => {
         const data = await productService.getAllProducts();
         
         res.render('products', {products: data});
+        
     } catch (err) {
         console.log('Error, getAllProducts:', err);
         if (err instanceof Errors) res.status(err.code).json(err);
@@ -35,7 +36,7 @@ productController.createNewProduct = async (
 
         const data: ProductInput = req.body;
         data.productImages = req.files?.map(ele => {
-            return ele.path.replace(/\\/g, '/'); // regular expression
+            return ele.path;
         });
 
         await productService.createNewProduct(data);
@@ -57,7 +58,7 @@ productController.createNewProduct = async (
     }
 };
 
-productController.updateChosenProducrt = async (req: Request, res: Response) => {
+productController.updateChosenProduct = async (req: Request, res: Response) => {
     try {
         console.log('updateChosenProducrt');
         const id = req.params.id;
