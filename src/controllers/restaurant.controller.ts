@@ -84,8 +84,8 @@ restaurantController.processLogin = async (
 
         const input: LoginInput = req.body;
         const result = await memberService.processLogin(input);
+        
         // TODO: TOKENS AUTHENTICATION
-
         req.session.member = result; // resultda qaytgan qiymatni req.session.memberga tenglab olyapmiz. 
         req.session.save(function () {
             res.redirect("/admin/product/all");
@@ -123,7 +123,6 @@ restaurantController.getUsers = async (req: Request, res: Response) => {
         const result = await memberService.getUsers();
         console.log('result:', result);
         
-
         res.render('users', {users: result});
     } catch (err) {
         console.log("ERROR , getUsers:", err);
