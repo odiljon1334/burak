@@ -31,20 +31,38 @@ console.log("TRAIN AREA!");
     Database validation.
 */
 
+// O-TASK
+// Define
+function calculateSumOfNumbers(values: any[]) {
+    // reduce: Har bir elementni tekshiradi
+    return values.reduce((sum, value) => {
+        // Bu yerda agar qiymat number bo'lsa, sumga qo'shiladi.
+        // Agar qiymat string, boolean yoki object bo'lsa, hisobga olinmaydi.
+        if (typeof value === 'number') {
+            return sum + value;
+        }
+        // Bu yerda esa yuqoridagi qiymatlarni qo'shib qaytaryapmiz.
+        return sum;
+    }, 0);
+}
+
+// Call
+const result = calculateSumOfNumbers([10, "10", {son: 10}, true, 35]);
+console.log('O-TASK:', result);
+
 // N-TASK
 // Define
-
-function palindromCheck(str: string) {
-    // Stringni kichik harflarga o'tkazamiz va bo'sh joylar hamda boshqa belgilarni olib tashlaymiz
-    const newPalindrom = str.toLocaleLowerCase().replace(/[^a-z0-9]/g, '');
-    //  Stringni harflarga bo'lib, teskari qilib, keyin yana stringga birlashtiramiz.
-    const newReverse = newPalindrom.split('').reverse().join('');
-    // Asl string va teskari o'qilgan stringni taqqoslaymiz. Agar ular teng bo'lsa, true qaytadi, aks holda false.
-    return newReverse === newPalindrom;
-}
-// Call
-const result = palindromCheck("son");
-console.log('N-TASK:', result);
+// function palindromCheck(str: string) {
+//     // Stringni kichik harflarga o'tkazamiz va bo'sh joylar hamda boshqa belgilarni olib tashlaymiz
+//     const newPalindrom = str.toLocaleLowerCase().replace(/[^a-z0-9]/g, '');
+//     //  Stringni harflarga bo'lib, teskari qilib, keyin yana stringga birlashtiramiz.
+//     const newReverse = newPalindrom.split('').reverse().join('');
+//     // Asl string va teskari o'qilgan stringni taqqoslaymiz. Agar ular teng bo'lsa, true qaytadi, aks holda false.
+//     return newReverse === newPalindrom;
+// }
+// // Call
+// const result = palindromCheck("son");
+// console.log('N-TASK:', result);
 
 // M-TASK
 // Define
