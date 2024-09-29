@@ -6,7 +6,6 @@ $(function () {
     fileTarget.on("change", function () {
         if(window.FileReader) {
             const uploadFile = $(this)[0].files[0];
-            console.log('uploadFile:', uploadFile);
             const fileType = uploadFile["type"];
             const validImageType = ["image/jpg", "image/jpeg", "image/png"];
 
@@ -14,7 +13,6 @@ $(function () {
                 alert('Please insert only jpg, jpeg, png!');
             } else {
                 if(uploadFile) {
-                    console.log(URL.createObjectURL(uploadFile));
                     $(".upload-img-frame")
                     .attr("src", URL.createObjectURL(uploadFile))
                     .addClass("success");

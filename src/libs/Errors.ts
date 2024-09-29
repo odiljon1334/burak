@@ -16,6 +16,7 @@ export enum Message {
     UPDATE_FAILED = "Update is failed!",
     NO_MEMBER_NICK = "No member with that member nick!",
     USED_NICK_PHONE = "You are inserting alredy used nik or phone!",
+    BLOCKED_USER = "You have been blocked, contact the restaurant!",
     WRONG_PASSWORD = "Wrong password, please try again!",
     NOT_AUTHENTICATED = "You are not authenticated, Please login first!",
 }
