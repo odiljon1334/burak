@@ -31,24 +31,42 @@ console.log("TRAIN AREA!");
     Database validation.
 */
 
+// BSSR BURAK (Traditinal API + Rest API)
+// SPA BURAK (Rest API)
+// SPA NESTAR (GraphQLI API)
+
+// VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
+// VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
+
+
+// P-TASK
+// Define
+function objectToArray(obj: {[key: string]: any}) {
+    return Object.entries(obj);
+}
+// Call
+const result = objectToArray({ a: 10, b: 20 });
+console.log('P-TASK:', result); 
+
+
 // O-TASK
 // Define
-function calculateSumOfNumbers(values: any[]) {
-    // reduce: Har bir elementni tekshiradi
-    return values.reduce((sum, value) => {
-        // Bu yerda agar qiymat number bo'lsa, sumga qo'shiladi.
-        // Agar qiymat string, boolean yoki object bo'lsa, hisobga olinmaydi.
-        if (typeof value === 'number') {
-            return sum + value;
-        }
-        // Bu yerda esa yuqoridagi qiymatlarni qo'shib qaytaryapmiz.
-        return sum;
-    }, 0);
-}
+// function calculateSumOfNumbers(values: any[]) {
+//     // reduce: Har bir elementni tekshiradi
+//     return values.reduce((sum, value) => {
+//         // Bu yerda agar qiymat number bo'lsa, sumga qo'shiladi.
+//         // Agar qiymat string, boolean yoki object bo'lsa, hisobga olinmaydi.
+//         if (typeof value === 'number') {
+//             return sum + value;
+//         }
+//         // Bu yerda esa yuqoridagi qiymatlarni qo'shib qaytaryapmiz.
+//         return sum;
+//     }, 0);
+// }
 
-// Call
-const result = calculateSumOfNumbers([10, "10", {son: 10}, true, 35]);
-console.log('O-TASK:', result);
+// // Call
+// const result = calculateSumOfNumbers([10, "10", {son: 10}, true, 35]);
+// console.log('O-TASK:', result);
 
 // N-TASK
 // Define
