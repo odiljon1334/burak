@@ -38,15 +38,22 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// Q-TASK
+// Define
+function hasProperty(obj: object, key: string) {
+    return key in obj;
+}
+const result = hasProperty({name: "BMW", model: "M3"}, "model");
+console.log('Q-TASK:', result);
 
 // P-TASK
 // Define
-function objectToArray(obj: {[key: string]: any}) {
-    return Object.entries(obj);
-}
-// Call
-const result = objectToArray({ a: 10, b: 20 });
-console.log('P-TASK:', result); 
+// function objectToArray(obj: {[key: string]: any}) {
+//     return Object.entries(obj);
+// }
+// // Call
+// const result = objectToArray({ a: 10, b: 20 });
+// console.log('P-TASK:', result); 
 
 
 // O-TASK
