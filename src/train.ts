@@ -38,13 +38,30 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+
+// R-TASK
+// Define 
+function calculate(str: string){
+    // Bu yerda split('+') methodi orqali unga shart berib
+    // stringni ichidan raqamlarni ajratib olyapmiz!
+    const getNumber = str.split('+').map(Number);
+
+    // Bu joyda reduce() methodi yordamida ajratilgan numberni bir biriga qo'shib olyapmiz,
+    // va hosil bo'lgan natijani qaytaryapmiz!
+    return getNumber.reduce((num, ele) => num + ele);
+    
+}
+// Call
+const result = calculate("1+3");
+console.log('R-TASK:', result);
+
 // Q-TASK
 // Define
-function hasProperty(obj: object, key: string) {
-    return key in obj;
-}
-const result = hasProperty({name: "BMW", model: "M3"}, "model");
-console.log('Q-TASK:', result);
+// function hasProperty(obj: object, key: string) {
+//     return key in obj;
+// }
+// const result = hasProperty({name: "BMW", model: "M3"}, "model");
+// console.log('Q-TASK:', result);
 
 // P-TASK
 // Define
