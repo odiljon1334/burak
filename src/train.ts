@@ -38,22 +38,34 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// S-TASK 
+function missingNumber(num: number[]) {
+    let arrNums = num.length * (num.length + 1) / 2;
+
+    let allNums = num.reduce((ele, nums) => ele + nums, 0);
+
+    return arrNums - allNums;
+}
+
+// Call
+const result = missingNumber([3, 0, 1]);
+console.log('S-TASK:', result);
 
 // R-TASK
 // Define 
-function calculate(str: string){
-    // Bu yerda split('+') methodi orqali unga shart berib
-    // stringni ichidan raqamlarni ajratib olyapmiz!
-    const getNumber = str.split('+').map(Number);
+// function calculate(str: string){
+//     // Bu yerda split('+') methodi orqali unga shart berib
+//     // stringni ichidan raqamlarni ajratib olyapmiz!
+//     const getNumber = str.split('+').map(Number);
 
-    // Bu joyda reduce() methodi yordamida ajratilgan numberni bir biriga qo'shib olyapmiz,
-    // va hosil bo'lgan natijani qaytaryapmiz!
-    return getNumber.reduce((num, ele) => num + ele);
+//     // Bu joyda reduce() methodi yordamida ajratilgan numberni bir biriga qo'shib olyapmiz,
+//     // va hosil bo'lgan natijani qaytaryapmiz!
+//     return getNumber.reduce((num, ele) => num + ele);
     
-}
-// Call
-const result = calculate("1+3");
-console.log('R-TASK:', result);
+// }
+// // Call
+// const result = calculate("1+3");
+// console.log('R-TASK:', result);
 
 // Q-TASK
 // Define
