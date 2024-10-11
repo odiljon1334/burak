@@ -38,18 +38,29 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
-// S-TASK 
-function missingNumber(num: number[]) {
-    let arrNums = num.length * (num.length + 1) / 2;
+// T-TASK
+function mergeSortedArrays(num: number[], setNum: number[]) {
+    const sortNum = [...num, ...setNum].sort((a, b) => a - b);
 
-    let allNums = num.reduce((ele, nums) => ele + nums, 0);
+    return sortNum;
 
-    return arrNums - allNums;
 }
-
 // Call
-const result = missingNumber([3, 0, 1]);
-console.log('S-TASK:', result);
+const result = mergeSortedArrays([0,3,4,31], [4,6,30]);
+console.log('result:', result);
+
+// S-TASK 
+// function missingNumber(num: number[]) {
+//     let arrNums = num.length * (num.length + 1) / 2;
+
+//     let allNums = num.reduce((ele, nums) => ele + nums, 0);
+
+//     return arrNums - allNums;
+// }
+
+// // Call
+// const result = missingNumber([3, 0, 1]);
+// console.log('S-TASK:', result);
 
 // R-TASK
 // Define 
