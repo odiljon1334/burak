@@ -38,16 +38,28 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
-// T-TASK
-function mergeSortedArrays(num: number[], setNum: number[]) {
-    const sortNum = [...num, ...setNum].sort((a, b) => a - b);
-
-    return sortNum;
-
+// U-TASK 
+function sumOdds(sum: number) {
+    let count = 0;
+    for (let i = 1; i < sum; i += 2) {
+        count++;
+    }
+    return count;
 }
 // Call
-const result = mergeSortedArrays([0,3,4,31], [4,6,30]);
-console.log('result:', result);
+console.log(sumOdds(9));  
+console.log(sumOdds(11));
+
+// T-TASK
+// function mergeSortedArrays(num: number[], setNum: number[]) {
+//     const sortNum = [...num, ...setNum].sort((a, b) => a - b);
+
+//     return sortNum;
+
+// }
+// // Call
+// const result = mergeSortedArrays([0,3,4,31], [4,6,30]);
+// console.log('result:', result);
 
 // S-TASK 
 // function missingNumber(num: number[]) {
