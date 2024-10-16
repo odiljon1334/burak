@@ -38,17 +38,34 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
-// U-TASK 
-function sumOdds(sum: number) {
-    let count = 0;
-    for (let i = 1; i < sum; i += 2) {
-        count++;
-    }
-    return count;
-}
+// V-TASk 
+function countChars(str: string): Record<string, number> {
+    const result: Record<string, number> = {};
+    
+    str.split('').forEach(char => {
+      result[char] = (result[char] || 0) + 1;
+    });
+  
+    return result;
+  }
 // Call
-console.log(sumOdds(9));  
-console.log(sumOdds(11));
+const result = countChars("hello");
+console.log('V-TASK:', result);
+
+
+
+
+// U-TASK 
+// function sumOdds(sum: number) {
+//     let count = 0;
+//     for (let i = 1; i < sum; i += 2) {
+//         count++;
+//     }
+//     return count;
+// }
+// // Call
+// console.log(sumOdds(9));  
+// console.log(sumOdds(11));
 
 // T-TASK
 // function mergeSortedArrays(num: number[], setNum: number[]) {
