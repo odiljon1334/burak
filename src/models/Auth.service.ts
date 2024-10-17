@@ -4,24 +4,24 @@ import { Member } from "../libs/types/member";
 import jwt from "jsonwebtoken";
 
 class AuthService {
-    constructor() {
+    private readonly secretToken;
 
+    constructor() {
+        this.secretToken = process.env.SECRET_TOKEN as string;
     }
 
     public async createToken(payload: Member) {
         return new Promise((resolve, reject) => {
             const duration = `${AUTH_TIMER}h`;
 
-            console.log('payload:', payload);
             const newPayload = {
                 ...payload,
                 _id: (payload._id instanceof Object) ? payload._id.toString() : payload._id
             };
-            console.log('newPayload:', newPayload);
 
             jwt.sign(
                 newPayload, 
-                process.env.SECRET_TOKEN as string, 
+                this.secretToken,
                 {
                 expiresIn: duration,
             }, 
@@ -36,6 +36,16 @@ class AuthService {
                 }
             });
         });
+    }
+
+    public async checkAuth(token: string): Promise<Member> {
+        const result: Member = (await jwt.verify(
+            token, 
+            this.secretToken
+        )) as Member;
+        console.log(`--- [AUTH] memberNick: ${result.memberNick} ---`);
+        return result;
+        
     }
 }
 
