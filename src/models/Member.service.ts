@@ -16,7 +16,6 @@ class MemberService {
     public async signup(input: MemberInput): Promise<Member> {
         const salt = await bcrypt.genSalt();
         input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
-
         try {
             const result = await this.memberModel.create(input);
             result.memberPassword = '';
@@ -48,7 +47,7 @@ class MemberService {
         );
 
         if (!isMatch) {
-            throw new Errors(HttpCode.UNATHORIZED, Message.WRONG_PASSWORD);
+            throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
         }
 
         return await this.memberModel.findById(member._id).lean().exec();
@@ -90,7 +89,7 @@ class MemberService {
         );
 
         if (!isMatch) {
-            throw new Errors(HttpCode.UNATHORIZED, Message.WRONG_PASSWORD);
+            throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
         }
 
         return await this.memberModel.findById(member._id).exec();
