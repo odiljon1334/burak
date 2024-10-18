@@ -38,19 +38,34 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
-// V-TASk 
-function countChars(str: string): Record<string, number> {
-    const result: Record<string, number> = {};
-    
-    str.split('').forEach(char => {
-      result[char] = (result[char] || 0) + 1;
-    });
-  
-    return result;
-  }
+
+// W-TASK
+function chunkArr(arr: number[], numSize: number) {
+    const newArr = [];
+    for(let i = 0; i < arr.length; i += numSize) {
+      newArr.push(arr.slice(i, i + numSize));
+    }
+    return newArr;
+}
 // Call
-const result = countChars("hello");
-console.log('V-TASK:', result);
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const result = chunkArr(array, 3);
+console.log('W-TASK: =>', result);
+
+
+// V-TASk 
+// function countChars(str: string): Record<string, number> {
+//     const result: Record<string, number> = {};
+    
+//     str.split('').forEach(char => {
+//       result[char] = (result[char] || 0) + 1;
+//     });
+  
+//     return result;
+//   }
+// // Call
+// const result = countChars("hello");
+// console.log('V-TASK:', result);
 
 
 

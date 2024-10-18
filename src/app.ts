@@ -21,8 +21,8 @@ const store = new MongoDBStore({
 // MiddleWare Design Patterns
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // Traditional API
+app.use(express.json()); // REST API
 app.use(cookieParser());
 app.use(morgan(MORGAN_FORMAT));
 
