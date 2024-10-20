@@ -10,29 +10,24 @@ class AuthService {
         this.secretToken = process.env.SECRET_TOKEN as string;
     }
 
-    public async createToken(payload: Member) {
+    public async createToken(payload: Member): Promise<string> {
         return new Promise((resolve, reject) => {
             const duration = `${AUTH_TIMER}h`;
-
-            const newPayload = {
-                ...payload,
-                _id: (payload._id instanceof Object) ? payload._id.toString() : payload._id
-            };
-
+            
             jwt.sign(
-                newPayload, 
+                payload, 
                 this.secretToken,
                 {
                 expiresIn: duration,
             }, 
             (err, token) => {
                 if (err) {
-                    console.error('Token creation error:', err); // Xatolikni konsolga yozib oling
+                    console.error('Token creation error:', err);
                     reject(
                         new Errors(HttpCode.UNAUTHORIZED, Message.TOKEN_CREATION_FAILED)
                     );
                 } else {
-                    resolve(token);
+                    resolve(token as string);
                 }
             });
         });

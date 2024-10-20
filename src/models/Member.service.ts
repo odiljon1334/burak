@@ -17,9 +17,11 @@ class MemberService {
         const salt = await bcrypt.genSalt();
         input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
         try {
+            
             const result = await this.memberModel.create(input);
             result.memberPassword = '';
-            return result;
+            return result.toJSON();
+
         } catch (err) {
             console.error('Error, model:signup', err);
             throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE);
@@ -60,6 +62,19 @@ class MemberService {
         .exec();
         if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
         
+        return result;
+    }
+
+    public async updateMember(
+        member: Member, 
+        input: MemberUpdateInput
+    ): Promise<Member> {
+        const memberId = shapeIntoMongooseObectId(member._id);
+        const result = await this.memberModel
+        .findOneAndUpdate({ _id: memberId }, input, { new: true })
+        .exec();
+        if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
         return result;
     }
 
