@@ -21,7 +21,9 @@ router.post("/member/update",
     memberController.verifyAuth,
     uploader("members").single("memberImage"),
     memberController.updateMember,
-)
+);
+
+router.get("/member/top-users", memberController.getTopUsers);
 
 
 /** Profuct **/
