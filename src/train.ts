@@ -73,7 +73,10 @@ const result = countOccurrences(
         },
     },
          'model'
+<<<<<<< HEAD
 );
+=======
+>>>>>>> c82fa5d8bc03f8bf40f705b505ed28a6bc5ef132
 console.log('TASK-X: =>', result);
 
 
