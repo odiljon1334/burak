@@ -1,18 +1,22 @@
 import OrderItemModel from "../schema/OrderItem.model";
 import OrderModel from "../schema/Order.model";
-import { Member } from "../libs/types/member";
-import { Order, OrderInquiry, OrderItemInput } from "../libs/types/order";
-import { shapeIntoMongooseObectId } from "../libs/config";
-import Errors, { HttpCode, Message } from "../libs/Errors";
-import { ObjectId } from "mongoose";
+import {Member} from "../libs/types/member";
+import {Order, OrderInquiry, OrderItemInput, OrderUpdateInput} from "../libs/types/order";
+import {shapeIntoMongooseObectId} from "../libs/config";
+import Errors, {HttpCode, Message} from "../libs/Errors";
+import {ObjectId} from "mongoose";
+import MemberService from "./Member.service";
+import {OrderStatus} from "../libs/enums/oder.enum";
 
 class OrderService {
     private readonly orderModel;
     private readonly orderItemModel;
+    private readonly memberService;
 
     constructor() {
         this.orderModel = OrderModel;
         this.orderItemModel = OrderItemModel;
+        this.memberService = new MemberService();
     }
 
     public async createOrder(member: Member, input: OrderItemInput[]): Promise<Order> {
@@ -87,6 +91,28 @@ class OrderService {
 
         return result;
     }
+
+    public async  updateOrder(member: Member, input: OrderUpdateInput): Promise<Order> {
+        const memberId = shapeIntoMongooseObectId(member._id);
+        const orderId = shapeIntoMongooseObectId(input.orderId);
+        const orderStatus = input.orderStatus;
+
+        const result = await this.orderModel.findOneAndUpdate({
+            memberId: memberId,
+            _id: orderId,
+        },
+            {orderStatus: orderStatus},
+            {new: true}
+        )
+            .exec();
+        if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
+        if (orderStatus === OrderStatus.PROCESS) {
+            await this.memberService.addUserPoint(member, 1);
+        }
+        return result;
+    }
+
 }
 
 export default OrderService;
