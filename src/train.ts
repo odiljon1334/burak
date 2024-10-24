@@ -38,19 +38,38 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// Z-TASK:
+//
+// Shunday function yozing, u sonlardan tashkil topgan array qabul qilsin. Function arraydagi juft sonlarni yigindisini qaytarsin
+// MASALAN: sumEvens([1,2,3]) return 2
+
+function sumEvents(arr: number[]) {
+    // Buyerda bizni arrayimizni ichida tashkil topkan sonlardan
+    // juft sonlarni yigindisini saqlaymiz
+    let doubleNum = 0;
+    // for loop orqalik arr.length loop qilib i mizni sonini tenlab olamiz
+    for (let i = 0; i < arr.length; i++) {
+        // i 3ga teng va uni foiz orqalik juft sonini doubleNum ga saqlab, qaytaryapmiz.
+        if (arr[i] % 2 === 0) {
+            doubleNum += arr[i];
+        }
+    }
+    return doubleNum;
+}
+const result = sumEvents([1, 2, 3]);
+console.log("result: =>", result);
+
+
 // Y-TASK:
 // Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
 // MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
 
-function findIntersection2(arr1: number[], arr2: number[]) {
-    return arr1.filter(value => arr2.includes(value));
-}
-// Call
-const result = findIntersection2([1, 2, 3], [3, 2, 0]);
-console.log('result: =>', result);
-
-  
-
+// function findIntersection2(arr1: number[], arr2: number[]) {
+//     return arr1.filter(value => arr2.includes(value));
+// }
+// // Call
+// const result = findIntersection2([1, 2, 3], [3, 2, 0]);
+// console.log('result: =>', result);
 
 // TASK X
 
