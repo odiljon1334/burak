@@ -41,7 +41,7 @@ const productController: T = {};
         console.log('getProduct');
         const { id } = req.params;
         const memberId = req.member?._id ?? null,
-            result = await productService.getProduct(memberId, id);
+          result = await productService.getProduct(memberId, id);
         
             res.status(HttpCode.OK).json(result);
     } catch (err) {

@@ -28,7 +28,7 @@ class ProductService {
     public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
         const match: T = { productStatus: ProductStatus.PROCESS };
 
-        if(inquiry.productCollection) 
+        if(inquiry.productCollection) // true
             match.productCollection = inquiry.productCollection;
 
         if(inquiry.search) {
@@ -56,6 +56,7 @@ class ProductService {
         
         let result = await this.productModel
         .findOne({ _id: productId, productStatus: ProductStatus.PROCESS, })
+        .lean()
         .exec();
         if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
@@ -79,7 +80,8 @@ class ProductService {
                 result = await this.productModel
                 .findByIdAndUpdate(
                     productId,
-                    { $inc: { productViews: +1 }}, 
+                    { $inc: { productViews: +1 } },
+                    { new: true }
                 )
                 .exec();
             }
