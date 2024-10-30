@@ -43,8 +43,8 @@ class ProductService {
         .aggregate([
             { $match: match },
             { $sort: sort },
-            { $skip: (inquiry.page * 1 - 1) * inquiry.limit },
-            { $limit: inquiry.limit * 1 },
+            { $skip: (inquiry.page - 1) * inquiry.limit },
+            { $limit: inquiry.limit * 1},
         ])
         .exec();
         if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
@@ -108,7 +108,7 @@ class ProductService {
         }
     }
 
-    public async updateChosenProducrt(
+    public async updateChosenProduct(
         id: string, 
         input: ProductUpdateInput
     ): Promise<Product> {

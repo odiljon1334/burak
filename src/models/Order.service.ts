@@ -21,8 +21,8 @@ class OrderService {
 
     public async createOrder(member: Member, input: OrderItemInput[]): Promise<Order> {
         const memberId = shapeIntoMongooseObectId(member._id);
-        const amount = input.reduce((accumlator: number, item: OrderItemInput ) => {
-            return accumlator + item.itemPrice * item.itemQuantity;
+        const  amount= input.reduce((accumulator: number, item: OrderItemInput ) => {
+            return accumulator + item.itemPrice * item.itemQuantity;
         }, 0);
         const delivery = amount < 100 ? 5 : 0;
 
@@ -47,6 +47,7 @@ class OrderService {
     }
 
     private async recordOrderItem(orderId: ObjectId, input: OrderItemInput[]): Promise<void> {
+        // buyerda map iteretion metodidan foydalanganimizni sababi u async for let da async ishlamaydi
         const promisedList = input.map( async (item: OrderItemInput) => {
             item.orderId = orderId;
             item.productId = shapeIntoMongooseObectId(item.productId);
@@ -61,7 +62,9 @@ class OrderService {
         member: Member, 
         inquiry: OrderInquiry
     ): Promise<Order[]> {
+        console.log('member: =>', member._id);
         const memberId = shapeIntoMongooseObectId(member._id);
+        console.log('memberId: =>', memberId);
         const matches = {memberId: memberId, orderStatus: inquiry.orderStatus };
 
         const result = await this.orderModel.aggregate([

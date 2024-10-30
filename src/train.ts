@@ -38,26 +38,38 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// ZA-TASK:
+// Shunday function yozing, u array ichidagi objectlarni “age” qiymati boyicha sortlab bersin.
+// MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}]
+
+function sortByAge(arr: { age: number }[]) {
+    return arr.slice().sort((a, b) => a.age - b.age);
+}
+
+const result = sortByAge([{age:23}, {age:21}, {age:13}]);
+console.log('result: =>', result);
+
+
 // Z-TASK:
 //
 // Shunday function yozing, u sonlardan tashkil topgan array qabul qilsin. Function arraydagi juft sonlarni yigindisini qaytarsin
 // MASALAN: sumEvens([1,2,3]) return 2
 
-function sumEvents(arr: number[]) {
-    // Buyerda bizni arrayimizni ichida tashkil topkan sonlardan
-    // juft sonlarni yigindisini saqlaymiz
-    let doubleNum = 0;
-    // for loop orqalik arr.length loop qilib i mizni sonini tenlab olamiz
-    for (let i = 0; i < arr.length; i++) {
-        // i 3ga teng va uni foiz orqalik juft sonini doubleNum ga saqlab, qaytaryapmiz.
-        if (arr[i] % 2 === 0) {
-            doubleNum += arr[i];
-        }
-    }
-    return doubleNum;
-}
-const result = sumEvents([1, 2, 3]);
-console.log("result: =>", result);
+// function sumEvents(arr: number[]) {
+//     // Buyerda bizni arrayimizni ichida tashkil topkan sonlardan
+//     // juft sonlarni yigindisini saqlaymiz
+//     let doubleNum = 0;
+//     // for loop orqalik arr.length loop qilib i mizni sonini tenlab olamiz
+//     for (let i = 0; i < arr.length; i++) {
+//         // i 3ga teng va uni foiz orqalik juft sonini doubleNum ga saqlab, qaytaryapmiz.
+//         if (arr[i] % 2 === 0) {
+//             doubleNum += arr[i];
+//         }
+//     }
+//     return doubleNum;
+// }
+// const result = sumEvents([1, 2, 3]);
+// console.log("result: =>", result);
 
 
 // Y-TASK:
