@@ -38,6 +38,34 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// TASK ZD
+
+// Shunday function yozing. Bu function o'ziga, parametr sifatida
+// birinchi oddiy number, keyin yagona array va uchinchi bo'lib oddiy number
+// qabul qilsin. Berilgan birinchi number parametr, arrayning tarkibida indeks bo'yicha hisoblanib,
+// shu aniqlangan indeksni uchinchi number parametr bilan alashtirib, natija sifatida
+// yangilangan arrayni qaytarsin.
+
+// MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2];
+
+// Yuqoridagi misolda, birinchi raqam bu '1' va arrayning '1'chi indeksi bu 3.
+// Bizning function uchinchi berilgan '2' raqamini shu '3' bilan almashtirib,
+// yangilangan arrayni qaytarmoqda.
+
+function changeNumberInArray(num1: number, arr: number[], num2: number) {
+    arr.forEach((value, index) => {
+        if (index === num1) {
+            arr[index] = num2;
+        }
+    });
+    return arr;
+}
+// Call
+const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+console.log('TASK-ZD:', result);
+
+
+
 // ZA-TASK:
 // Shunday function yozing, u array ichidagi objectlarni “age” qiymati boyicha sortlab bersin.
 // MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}]
@@ -62,24 +90,24 @@ console.log("TRAIN AREA!");
 
 // °C va °F => Tempraturani o'lchashda ishlatiladigan o'lchov birligi.
 
-function celsiusToFahrenheit1(celsius: number): number {
-    return (celsius * 9) / 5 + 32;
-}
-// Call
-const result1 = celsiusToFahrenheit1(0);
-console.log("ZC-TASK: =>", result1); 
+// function celsiusToFahrenheit1(celsius: number): number {
+//     return (celsius * 9) / 5 + 32;
+// }
+// // Call
+// const result1 = celsiusToFahrenheit1(0);
+// console.log("ZC-TASK: =>", result1); 
 
 
 // ZB-TASK:
 
 // Shunday function yozing, uni 2 ta number parametri bolsin va berilgan sonlar orasidan random raqam return qilsin
 // MASALAN: randomBetween(30, 50) return 45
-function randomBetween(min: number, max: number): number {
-    return (Math.random() * (max - min + 1) + min) | 0;
-}
-// Call
-const result = randomBetween(30, 50);
-console.log('ZB-TASK: =>', result);
+// function randomBetween(min: number, max: number): number {
+//     return (Math.random() * (max - min + 1) + min) | 0;
+// }
+// // Call
+// const result = randomBetween(30, 50);
+// console.log('ZB-TASK: =>', result);
   
 
 
