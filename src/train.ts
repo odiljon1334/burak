@@ -38,6 +38,25 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// ZE-TASK:
+
+// Shunday function yozing, uni  string parametri bolsin. String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
+// MASALAN: removeDuplicate('stringg') return 'string'
+
+
+
+function removeDuplicate(str: string): string {
+    return str
+      .split("")
+      .filter((char, index) => str.indexOf(char) === index)
+      .join("");
+  }
+
+  const result = removeDuplicate('stringg');
+  console.log('ZE-TASK: =>', result);
+  
+  
+
 // TASK ZD
 
 // Shunday function yozing. Bu function o'ziga, parametr sifatida
@@ -52,17 +71,17 @@ console.log("TRAIN AREA!");
 // Bizning function uchinchi berilgan '2' raqamini shu '3' bilan almashtirib,
 // yangilangan arrayni qaytarmoqda.
 
-function changeNumberInArray(num1: number, arr: number[], num2: number) {
-    arr.forEach((value, index) => {
-        if (index === num1) {
-            arr[index] = num2;
-        }
-    });
-    return arr;
-}
-// Call
-const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
-console.log('TASK-ZD:', result);
+// function changeNumberInArray(num1: number, arr: number[], num2: number) {
+//     arr.forEach((value, index) => {
+//         if (index === num1) {
+//             arr[index] = num2;
+//         }
+//     });
+//     return arr;
+// }
+// // Call
+// const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+// console.log('TASK-ZD:', result);
 
 
 
