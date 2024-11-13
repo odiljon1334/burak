@@ -62,9 +62,7 @@ class OrderService {
         member: Member, 
         inquiry: OrderInquiry
     ): Promise<Order[]> {
-        console.log('member: =>', member._id);
         const memberId = shapeIntoMongooseObectId(member._id);
-        console.log('memberId: =>', memberId);
         const matches = {memberId: memberId, orderStatus: inquiry.orderStatus };
 
         const result = await this.orderModel.aggregate([
