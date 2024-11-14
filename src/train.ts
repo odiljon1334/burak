@@ -38,6 +38,22 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// TASK ZG
+
+// String sifatida berilgan string parametrni
+// snake case'ga o'tkazib beradigan function yozing.
+
+// MASALAN: convertToSnakeCase('name should be a string')
+// return 'name_should_be_a_string'
+
+const convertToSnakeCase = (str: string) => {
+    return str.split(" ").join("_");
+}
+
+const result = convertToSnakeCase('name should be a string');
+console.log("TASK-ZG: =>", result);
+
+
 // ZE-TASK:
 
 // Shunday function yozing, uni  string parametri bolsin. String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
@@ -45,15 +61,15 @@ console.log("TRAIN AREA!");
 
 
 
-function removeDuplicate(str: string): string {
-    return str
-      .split("")
-      .filter((char, index) => str.indexOf(char) === index)
-      .join("");
-  }
+// function removeDuplicate(str: string): string {
+//     return str
+//       .split("")
+//       .filter((char, index) => str.indexOf(char) === index)
+//       .join("");
+//   }
 
-  const result = removeDuplicate('stringg');
-  console.log('ZE-TASK: =>', result);
+//   const result = removeDuplicate('stringg');
+//   console.log('ZE-TASK: =>', result);
   
   
 
