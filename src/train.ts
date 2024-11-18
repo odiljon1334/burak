@@ -38,6 +38,21 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// ZH-TASK:
+
+// Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
+// MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
+
+
+
+function findDisappearedNumbers(nums: number[]): number[] {
+    const max = Math.max(...nums);
+    return Array.from({ length: max }, (_, i) => i + 1).filter(n => !nums.includes(n));
+}
+const result = findDisappearedNumbers([1, 3, 4, 7]);
+console.log("ZH-TASK:", result); // [2, 5, 6]
+
+
 // TASK ZG
 
 // String sifatida berilgan string parametrni
@@ -46,12 +61,12 @@ console.log("TRAIN AREA!");
 // MASALAN: convertToSnakeCase('name should be a string')
 // return 'name_should_be_a_string'
 
-const convertToSnakeCase = (str: string) => {
-    return str.split(" ").join("_");
-}
+// const convertToSnakeCase = (str: string) => {
+//     return str.split(" ").join("_");
+// }
 
-const result = convertToSnakeCase('name should be a string');
-console.log("TASK-ZG: =>", result);
+// const result = convertToSnakeCase('name should be a string');
+// console.log("TASK-ZG: =>", result);
 
 
 // ZE-TASK:
