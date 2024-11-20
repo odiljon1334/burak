@@ -38,6 +38,18 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// ZI-TASK:
+
+// Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
+// MASALAN: delayHelloWorld("Hello World") return "Hello World"
+ function delayHelloWorld(str: string){
+    setTimeout(() => {
+        console.log(str);
+    }, 3000); 
+ }
+// Call
+delayHelloWorld("Hello World!");
+
 // ZH-TASK:
 
 // Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
@@ -45,12 +57,12 @@ console.log("TRAIN AREA!");
 
 
 
-function findDisappearedNumbers(nums: number[]): number[] {
-    const max = Math.max(...nums);
-    return Array.from({ length: max }, (_, i) => i + 1).filter(n => !nums.includes(n));
-}
-const result = findDisappearedNumbers([1, 3, 4, 7]);
-console.log("ZH-TASK:", result); // [2, 5, 6]
+// function findDisappearedNumbers(nums: number[]): number[] {
+//     const max = Math.max(...nums);
+//     return Array.from({ length: max }, (_, i) => i + 1).filter(n => !nums.includes(n));
+// }
+// const result = findDisappearedNumbers([1, 3, 4, 7]);
+// console.log("ZH-TASK:", result); // [2, 5, 6]
 
 
 // TASK ZG
