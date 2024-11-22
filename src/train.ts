@@ -38,17 +38,30 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// ZJ-TASK:
+
+// Shunday function yozing, u berilgan arrayni ichidagi numberlarni qiymatini hisoblab qaytarsin.
+// MASALAN: reduceNestedArray([1, [1, 2, [4]]]) return 8
+
+function reduceNestedArray(arr: any[]): number {
+    return arr.reduce((sum, item) => {
+      return sum + (Array.isArray(item) ? reduceNestedArray(item) : item);
+    }, 0);
+  }
+  
+  console.log(reduceNestedArray([1, [1, 2, [4]]]));
+
 // ZI-TASK:
 
 // Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
 // MASALAN: delayHelloWorld("Hello World") return "Hello World"
- function delayHelloWorld(str: string){
-    setTimeout(() => {
-        console.log(str);
-    }, 3000); 
- }
-// Call
-delayHelloWorld("Hello World!");
+//  function delayHelloWorld(str: string){
+//     setTimeout(() => {
+//         console.log(str);
+//     }, 3000); 
+//  }
+// // Call
+// delayHelloWorld("Hello World!");
 
 // ZH-TASK:
 
