@@ -38,18 +38,40 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// TASK ZK:
+
+// Shunday function yozing, bu function har bir soniyada bir marotaba
+// console'ga 1'dan 5'gacha bo'lgan raqamlarni chop etsin va
+// 5 soniyadan so'ng function o'z ishini to'xtatsin
+  
+// MASALAN: printNumbers();
+
+function printNumbers() {
+  let count = 1;
+  const intervalId = setInterval(() => {
+    console.log(count);
+    if (count === 5) {
+      clearInterval(intervalId);
+    }
+    count++;
+  }, 1000);
+}
+// Call
+printNumbers();
+
+
 // ZJ-TASK:
 
 // Shunday function yozing, u berilgan arrayni ichidagi numberlarni qiymatini hisoblab qaytarsin.
 // MASALAN: reduceNestedArray([1, [1, 2, [4]]]) return 8
 
-function reduceNestedArray(arr: any[]): number {
-    return arr.reduce((sum, item) => {
-      return sum + (Array.isArray(item) ? reduceNestedArray(item) : item);
-    }, 0);
-  }
+// function reduceNestedArray(arr: any[]): number {
+//     return arr.reduce((sum, item) => {
+//       return sum + (Array.isArray(item) ? reduceNestedArray(item) : item);
+//     }, 0);
+//   }
   
-  console.log(reduceNestedArray([1, [1, 2, [4]]]));
+//   console.log(reduceNestedArray([1, [1, 2, [4]]]));
 
 // ZI-TASK:
 
