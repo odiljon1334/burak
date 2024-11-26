@@ -38,6 +38,18 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// ZL-TASK:
+
+// Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
+// MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
+
+ function stringToKebab(str: string) {
+   return str.toLowerCase().split(' ').join('-');
+ }
+ // Call
+ const result = stringToKebab('I love Kebab');
+ console.log('result:', result);
+
 // TASK ZK:
 
 // Shunday function yozing, bu function har bir soniyada bir marotaba
@@ -46,18 +58,18 @@ console.log("TRAIN AREA!");
   
 // MASALAN: printNumbers();
 
-function printNumbers() {
-  let count = 1;
-  const intervalId = setInterval(() => {
-    console.log(count);
-    if (count === 5) {
-      clearInterval(intervalId);
-    }
-    count++;
-  }, 1000);
-}
-// Call
-printNumbers();
+// function printNumbers() {
+//   let count = 1;
+//   const intervalId = setInterval(() => {
+//     console.log(count);
+//     if (count === 5) {
+//       clearInterval(intervalId);
+//     }
+//     count++;
+//   }, 1000);
+// }
+// // Call
+// printNumbers();
 
 
 // ZJ-TASK:
