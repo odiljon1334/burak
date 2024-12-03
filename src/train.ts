@@ -38,17 +38,28 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// ZM-TASK:
+
+// Shunday function yozing, uni array va number parametri bolsin. Ikkinchi parametrda berilgan raqamli indexgacha arrayni orqasiga ogirib qaytarsin.
+// MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
+
+function rotateArray(arr: number[], index: number) {
+  const rotate = index % arr.length;
+  return [...arr.slice(1 - rotate), ...arr.slice(0, rotate + 1)];
+}
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+
 // ZL-TASK:
 
 // Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
 // MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
 
- function stringToKebab(str: string) {
-   return str.toLowerCase().split(' ').join('-');
- }
- // Call
- const result = stringToKebab('I love Kebab');
- console.log('result:', result);
+//  function stringToKebab(str: string) {
+//    return str.toLowerCase().split(' ').join('-');
+//  }
+//  // Call
+//  const result = stringToKebab('I love Kebab');
+//  console.log('result:', result);
 
 // TASK ZK:
 
