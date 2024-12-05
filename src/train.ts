@@ -38,16 +38,35 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// ZN-TASK:
+
+// Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
+// MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
+
+function areParenthesesBalanced(input: string) {
+  let openCount = 0;
+  let closeCount = 0;
+  for (const char of input) {
+      if (char === '(') openCount++;
+      if (char === ')') closeCount++;
+  }
+  return openCount === closeCount;
+}
+// Call
+const result = areParenthesesBalanced("string()ichida(qavslar)soni()balansda");
+console.log('result: =>', result);
+
+
 // ZM-TASK:
 
 // Shunday function yozing, uni array va number parametri bolsin. Ikkinchi parametrda berilgan raqamli indexgacha arrayni orqasiga ogirib qaytarsin.
 // MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
 
-function rotateArray(arr: number[], index: number) {
-  const rotate = index % arr.length;
-  return [...arr.slice(1 - rotate), ...arr.slice(0, rotate + 1)];
-}
-console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+// function rotateArray(arr: number[], index: number) {
+//   const rotate = index % arr.length;
+//   return [...arr.slice(1 - rotate), ...arr.slice(0, rotate + 1)];
+// }
+// console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
 
 // ZL-TASK:
 
