@@ -38,23 +38,31 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+function countNumberAndLetters(input: string): { number: number; letter: number } {
+    const numbers = input.match(/[0-9]/g)?.length || 0;
+    const letters = input.match(/[a-zA-Z]/g)?.length || 0;
+
+    return { number: numbers, letter: letters };
+}
+console.log(countNumberAndLetters("string152%¥"));
+
 // ZN-TASK:
 
 // Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
 // MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
 
-function areParenthesesBalanced(input: string) {
-  let openCount = 0;
-  let closeCount = 0;
-  for (const char of input) {
-      if (char === '(') openCount++;
-      if (char === ')') closeCount++;
-  }
-  return openCount === closeCount;
-}
-// Call
-const result = areParenthesesBalanced("string()ichida(qavslar)soni()balansda");
-console.log('result: =>', result);
+// function areParenthesesBalanced(input: string) {
+//   let openCount = 0;
+//   let closeCount = 0;
+//   for (const char of input) {
+//       if (char === '(') openCount++;
+//       if (char === ')') closeCount++;
+//   }
+//   return openCount === closeCount;
+// }
+// // Call
+// const result = areParenthesesBalanced("string()ichida(qavslar)soni()balansda");
+// console.log('result: =>', result);
 
 
 // ZM-TASK:
