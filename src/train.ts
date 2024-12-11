@@ -38,13 +38,40 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
-function countNumberAndLetters(input: string): { number: number; letter: number } {
-    const numbers = input.match(/[0-9]/g)?.length || 0;
-    const letters = input.match(/[a-zA-Z]/g)?.length || 0;
+// ZP-TASK:
 
-    return { number: numbers, letter: letters };
+// Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
+// MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
+
+function findDuplicatesForLoop(arr: number[]): number[] {
+    const count: Record<number, number> = {};
+    const result: number[] = [];
+
+    for (const num of arr) {
+        count[num] = (count[num] || 0) + 1;
+    }
+
+    for (const key in count) {
+        if (count[key] > 1) {
+            result.push(Number(key));
+        }
+    }
+
+    return result;
 }
-console.log(countNumberAndLetters("string152%¥"));
+
+console.log(findDuplicatesForLoop([1, 2, 3, 4, 5, 4, 3, 4]));
+
+
+
+
+// function countNumberAndLetters(input: string): { number: number; letter: number } {
+//     const numbers = input.match(/[0-9]/g)?.length || 0;
+//     const letters = input.match(/[a-zA-Z]/g)?.length || 0;
+
+//     return { number: numbers, letter: letters };
+// }
+// console.log(countNumberAndLetters("string152%¥"));
 
 // ZN-TASK:
 
