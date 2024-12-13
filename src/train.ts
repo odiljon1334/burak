@@ -38,29 +38,43 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// ZQ-TASK:
+
+// Shunday function yozing, u parametridagi arrayni ichidagi 1 marta kelgan elemnetni qaytarsin.
+// MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4
+
+function singleNumber(arrNum: number[]) {
+    return arrNum.reduce((a, b) => a ^ b);
+}
+// Call
+const result = singleNumber([4, 2, 1, 2, 1]);
+console.log('result:', result);
+
+
+
 // ZP-TASK:
 
 // Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
 // MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
 
-function findDuplicatesForLoop(arr: number[]): number[] {
-    const count: Record<number, number> = {};
-    const result: number[] = [];
+// function findDuplicatesForLoop(arr: number[]): number[] {
+//     const count: Record<number, number> = {};
+//     const result: number[] = [];
 
-    for (const num of arr) {
-        count[num] = (count[num] || 0) + 1;
-    }
+//     for (const num of arr) {
+//         count[num] = (count[num] || 0) + 1;
+//     }
 
-    for (const key in count) {
-        if (count[key] > 1) {
-            result.push(Number(key));
-        }
-    }
+//     for (const key in count) {
+//         if (count[key] > 1) {
+//             result.push(Number(key));
+//         }
+//     }
 
-    return result;
-}
+//     return result;
+// }
 
-console.log(findDuplicatesForLoop([1, 2, 3, 4, 5, 4, 3, 4]));
+// console.log(findDuplicatesForLoop([1, 2, 3, 4, 5, 4, 3, 4]));
 
 
 
