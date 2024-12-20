@@ -38,23 +38,38 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
-// 4-usul: Reduce bilan
-function firstUniqueCharIndex(str: string): number {
-    const charCount = str.split('').reduce<Record<string, number>>((acc, char) => {
-        acc[char] = (acc[char] || 0) + 1;
-        return acc;
-    }, {});
+// ZT-TASK:
 
-    for (let i = 0; i < str.length; i++) {
-        if (charCount[str[i]] === 1) {
-            return i;
-        }
-    }
 
-    return -1;
+// Shunday function yozing, u parametridagi array ichidagi barcha nollarni array oxiriga qoyib qolgan raqamlar ketma-ketligini saqlasin.
+// MASALAN: moveZeroes([0, 1, 0, 3, 12]) return [1, 3, 12, 0, 0]
+
+function moveZeroes(nums: number[]): number[] {
+    const nonZeroes = nums.filter(num => num !== 0);
+    const zeroes = nums.filter(num => num === 0);
+    return [...nonZeroes, ...zeroes];
 }
 
-console.log(firstUniqueCharIndex("stamp")); // 0
+const result = moveZeroes([0, 1, 0, 3, 12]);
+console.log('result: => ', result);
+
+
+// function firstUniqueCharIndex(str: string): number {
+//     const charCount = str.split('').reduce<Record<string, number>>((acc, char) => {
+//         acc[char] = (acc[char] || 0) + 1;
+//         return acc;
+//     }, {});
+
+//     for (let i = 0; i < str.length; i++) {
+//         if (charCount[str[i]] === 1) {
+//             return i;
+//         }
+//     }
+
+//     return -1;
+// }
+
+// console.log(firstUniqueCharIndex("stamp")); // 0
 
 // ZQ-TASK:
 
