@@ -52,7 +52,6 @@ class MemberService {
             else if (member.memberStatus === MemberStatus.BLOCK) {
                 throw new Errors(HttpCode.FORBIDDEN, Message.BLOCKED_USER);
             }
-            console.log("login:", member);
             
         const isMatch = await bcrypt.compare(
             input.memberPassword,
@@ -62,7 +61,6 @@ class MemberService {
         if (!isMatch) {
             throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
         }
-
         return await this.memberModel.findById(member._id).lean().exec();
     }
 

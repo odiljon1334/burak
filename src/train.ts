@@ -38,17 +38,35 @@ console.log("TRAIN AREA!");
 // VALIDATION: FRONTEND vs PIPE vs BACKEND vs DB
 // VALIDATION: CLIENT vs DTO vs SERVER vs SCHEMA
 
+// 4-usul: Reduce bilan
+function firstUniqueCharIndex(str: string): number {
+    const charCount = str.split('').reduce<Record<string, number>>((acc, char) => {
+        acc[char] = (acc[char] || 0) + 1;
+        return acc;
+    }, {});
+
+    for (let i = 0; i < str.length; i++) {
+        if (charCount[str[i]] === 1) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+console.log(firstUniqueCharIndex("stamp")); // 0
+
 // ZQ-TASK:
 
 // Shunday function yozing, u parametridagi arrayni ichidagi 1 marta kelgan elemnetni qaytarsin.
 // MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4
 
-function singleNumber(arrNum: number[]) {
-    return arrNum.reduce((a, b) => a ^ b);
-}
-// Call
-const result = singleNumber([4, 2, 1, 2, 1]);
-console.log('result:', result);
+// function singleNumber(arrNum: number[]) {
+//     return arrNum.reduce((a, b) => a ^ b);
+// }
+// // Call
+// const result = singleNumber([4, 2, 1, 2, 1]);
+// console.log('result:', result);
 
 
 

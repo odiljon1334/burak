@@ -55,7 +55,6 @@ memberController.login = async (req: Request, res: Response) => {
         res.cookie("accessToken", token, {maxAge: AUTH_TIMER * 3600 * 1000,
             httpOnly: false,
         });
-            console.log("memberLogin:", result);
         res.status(HttpCode.OK).json({ member: result, accessToken: token });
     } catch (err) {
         console.log("ERROR , login:", err);
