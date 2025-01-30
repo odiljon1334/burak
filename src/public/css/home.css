@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303f0, #dd6d04, #011c1afc, #7a6868);
+  background: linear-gradient(-45deg, #110303f0, #80ada0, #053431fc, #7a6868);
 }
 
 .home-container a {
@@ -15,10 +15,14 @@
 }
 
 .home-container .nav-item a {
-  color: #e3c08d;
+  color: #c5a367;
 }
 
 .home-container .nav-item a.disabled {
+  color: #898071;
+}
+
+.home-container .nav-item a:hover {
   color: #898071;
 }
 
@@ -30,38 +34,55 @@
   font-family: monospace;
 }
 
-.home-container .animation-frame {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 55px;
-}
-
 .home-container .animation-wrapper {
-  position: relative;
-  width: 775px;
-  height: 775px;
+  margin-top: 90px;
+  width: 80%;
+}
+
+.home-container .animation-wrapper .stagger-visualizer {
+  position: absolute;
+  width: 1100px;
+  height: 550px;
+  transform-origin: left top;
+}
+
+.home-container .animation-wrapper .stagger-visualizer .dots-wrapper {
+  transform: translateZ(0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
-.home-container .sphere-animation {
+.home-container .animation-wrapper .stagger-visualizer .dot {
   position: relative;
-  width: 580px;
-  height: 580px;
+  z-index: 1;
+  width: 23px;
+  height: 23px;
+  margin: 16px;
+  background-color: #d3cdc6;
+  border-radius: 50%;
 }
 
-.home-container .sphere path {
-  fill: url(#sphereGradient);
-  stroke-width: 1px;
-  stroke: rgba(80, 80, 80, 0.35);
-  backface-visibility: hidden;
-}
-
-@media (min-width: 500px) {
-  .sphere path {
-    stroke-width: 0.4px;
+@media (min-width: 740px) {
+  .home-container .stagger-visualizer .dot {
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #b3abab 8%, #cfcfcf 100%);
   }
+}
+
+.home-container .stagger-visualizer .cursor {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 37px;
+  height: 37px;
+  margin: 9px;
+  background-color: #b52b44;
+  border-radius: 50%;
 }
