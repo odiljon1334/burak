@@ -31,6 +31,17 @@ console.log("TRAIN AREA!");
     Database validation.
 */
 
+/* PM2 COMMANDS:
+    pm2 start dist/server.js --name=PROJECTNAME,
+    pm2 start "npm run start:prod" --name=PROJECTNAME,
+    pm2 logs
+    pm2 stop ID,
+    pm2 delete ID,
+    pm2 restart ID,
+    pm2 monit
+    pm2 kill
+*/
+
 // BSSR BURAK (Traditinal API + Rest API)
 // SPA BURAK (Rest API)
 // SPA NESTAR (GraphQLI API)
@@ -49,31 +60,28 @@ console.log("TRAIN AREA!");
 // ];
 // console.log(groupBy(data, 'city')); // { 'London': [ { name: 'Alice', age: 25, city: 'London' }, { name: 'Charlie', age: 25, city: 'London' } ], 'New York': [ { name: 'Bob', age: 30, city: 'New York' } ] }
 
-interface T  {
-    [key: string]: any;
+interface T {
+  [key: string]: any;
 }
 
 function groupBy(array: T[], key: keyof T) {
-    const result: T = {};
-    for (const item of array) {
-      const groupKey = String(item[key]);
-      if (!result[groupKey]) {
-        result[groupKey] = [];
-      }
-      result[groupKey].push(item);
+  const result: T = {};
+  for (const item of array) {
+    const groupKey = String(item[key]);
+    if (!result[groupKey]) {
+      result[groupKey] = [];
     }
-    return result;
+    result[groupKey].push(item);
   }
+  return result;
+}
 
-  const data = [
-    { name: 'Alice', age: 25, city: 'London' },
-    { name: 'Bob', age: 30, city: 'New York' },
-    { name: 'Charlie', age: 25, city: 'London' },
-  ];
-  console.log(groupBy(data, 'city'));
-  
-  
-
+const data = [
+  { name: "Alice", age: 25, city: "London" },
+  { name: "Bob", age: 30, city: "New York" },
+  { name: "Charlie", age: 25, city: "London" },
+];
+console.log(groupBy(data, "city"));
 
 // ZT-TASK:
 // Shunday function yozing, u parametridagi array ichidagi barcha nollarni array oxiriga qoyib qolgan raqamlar ketma-ketligini saqlasin.
@@ -87,7 +95,6 @@ function groupBy(array: T[], key: keyof T) {
 
 // const result = moveZeroes([0, 1, 0, 3, 12]);
 // console.log('result: => ', result);
-
 
 // function firstUniqueCharIndex(str: string): number {
 //     const charCount = str.split('').reduce<Record<string, number>>((acc, char) => {
@@ -118,8 +125,6 @@ function groupBy(array: T[], key: keyof T) {
 // const result = singleNumber([4, 2, 1, 2, 1]);
 // console.log('result:', result);
 
-
-
 // ZP-TASK:
 
 // Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
@@ -143,9 +148,6 @@ function groupBy(array: T[], key: keyof T) {
 // }
 
 // console.log(findDuplicatesForLoop([1, 2, 3, 4, 5, 4, 3, 4]));
-
-
-
 
 // function countNumberAndLetters(input: string): { number: number; letter: number } {
 //     const numbers = input.match(/[0-9]/g)?.length || 0;
@@ -172,7 +174,6 @@ function groupBy(array: T[], key: keyof T) {
 // // Call
 // const result = areParenthesesBalanced("string()ichida(qavslar)soni()balansda");
 // console.log('result: =>', result);
-
 
 // ZM-TASK:
 
@@ -202,7 +203,7 @@ function groupBy(array: T[], key: keyof T) {
 // Shunday function yozing, bu function har bir soniyada bir marotaba
 // console'ga 1'dan 5'gacha bo'lgan raqamlarni chop etsin va
 // 5 soniyadan so'ng function o'z ishini to'xtatsin
-  
+
 // MASALAN: printNumbers();
 
 // function printNumbers() {
@@ -218,7 +219,6 @@ function groupBy(array: T[], key: keyof T) {
 // // Call
 // printNumbers();
 
-
 // ZJ-TASK:
 
 // Shunday function yozing, u berilgan arrayni ichidagi numberlarni qiymatini hisoblab qaytarsin.
@@ -229,7 +229,7 @@ function groupBy(array: T[], key: keyof T) {
 //       return sum + (Array.isArray(item) ? reduceNestedArray(item) : item);
 //     }, 0);
 //   }
-  
+
 //   console.log(reduceNestedArray([1, [1, 2, [4]]]));
 
 // ZI-TASK:
@@ -239,17 +239,15 @@ function groupBy(array: T[], key: keyof T) {
 //  function delayHelloWorld(str: string){
 //     setTimeout(() => {
 //         console.log(str);
-//     }, 3000); 
+//     }, 3000);
 //  }
 // // Call
 // delayHelloWorld("Hello World!");
 
 // ZH-TASK:
 
-// Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
+// Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin.
 // MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
-
-
 
 // function findDisappearedNumbers(nums: number[]): number[] {
 //     const max = Math.max(...nums);
@@ -257,7 +255,6 @@ function groupBy(array: T[], key: keyof T) {
 // }
 // const result = findDisappearedNumbers([1, 3, 4, 7]);
 // console.log("ZH-TASK:", result); // [2, 5, 6]
-
 
 // TASK ZG
 
@@ -274,13 +271,10 @@ function groupBy(array: T[], key: keyof T) {
 // const result = convertToSnakeCase('name should be a string');
 // console.log("TASK-ZG: =>", result);
 
-
 // ZE-TASK:
 
 // Shunday function yozing, uni  string parametri bolsin. String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
 // MASALAN: removeDuplicate('stringg') return 'string'
-
-
 
 // function removeDuplicate(str: string): string {
 //     return str
@@ -291,8 +285,6 @@ function groupBy(array: T[], key: keyof T) {
 
 //   const result = removeDuplicate('stringg');
 //   console.log('ZE-TASK: =>', result);
-  
-  
 
 // TASK ZD
 
@@ -319,8 +311,6 @@ function groupBy(array: T[], key: keyof T) {
 // // Call
 // const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
 // console.log('TASK-ZD:', result);
-
-
 
 // ZA-TASK:
 // Shunday function yozing, u array ichidagi objectlarni “age” qiymati boyicha sortlab bersin.
@@ -351,8 +341,7 @@ function groupBy(array: T[], key: keyof T) {
 // }
 // // Call
 // const result1 = celsiusToFahrenheit1(0);
-// console.log("ZC-TASK: =>", result1); 
-
+// console.log("ZC-TASK: =>", result1);
 
 // ZB-TASK:
 
@@ -364,9 +353,6 @@ function groupBy(array: T[], key: keyof T) {
 // // Call
 // const result = randomBetween(30, 50);
 // console.log('ZB-TASK: =>', result);
-  
-
-
 
 // Z-TASK:
 //
@@ -388,7 +374,6 @@ function groupBy(array: T[], key: keyof T) {
 // }
 // const result = sumEvents([1, 2, 3]);
 // console.log("result: =>", result);
-
 
 // Y-TASK:
 // Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
@@ -429,17 +414,14 @@ function groupBy(array: T[], key: keyof T) {
 // // Call
 // const result = countOccurrences(
 //     {
-//         model: 'Bugatti', 
+//         model: 'Bugatti',
 //         steer: {
-//             model: 'HANKOOK', size: 30,  
+//             model: 'HANKOOK', size: 30,
 //         },
 //     },
 //          'model'
 // );
 // console.log('TASK-X: =>', result);
-
-
-
 
 // W-TASK
 // function chunkArr(arr: number[], numSize: number) {
@@ -454,25 +436,21 @@ function groupBy(array: T[], key: keyof T) {
 // const result = chunkArr(array, 3);
 // console.log('W-TASK: =>', result);
 
-
-// V-TASk 
+// V-TASk
 // function countChars(str: string): Record<string, number> {
 //     const result: Record<string, number> = {};
-    
+
 //     str.split('').forEach(char => {
 //       result[char] = (result[char] || 0) + 1;
 //     });
-  
+
 //     return result;
 //   }
 // // Call
 // const result = countChars("hello");
 // console.log('V-TASK:', result);
 
-
-
-
-// U-TASK 
+// U-TASK
 // function sumOdds(sum: number) {
 //     let count = 0;
 //     for (let i = 1; i < sum; i += 2) {
@@ -481,7 +459,7 @@ function groupBy(array: T[], key: keyof T) {
 //     return count;
 // }
 // // Call
-// console.log(sumOdds(9));  
+// console.log(sumOdds(9));
 // console.log(sumOdds(11));
 
 // T-TASK
@@ -495,7 +473,7 @@ function groupBy(array: T[], key: keyof T) {
 // const result = mergeSortedArrays([0,3,4,31], [4,6,30]);
 // console.log('result:', result);
 
-// S-TASK 
+// S-TASK
 // function missingNumber(num: number[]) {
 //     let arrNums = num.length * (num.length + 1) / 2;
 
@@ -509,7 +487,7 @@ function groupBy(array: T[], key: keyof T) {
 // console.log('S-TASK:', result);
 
 // R-TASK
-// Define 
+// Define
 // function calculate(str: string){
 //     // Bu yerda split('+') methodi orqali unga shart berib
 //     // stringni ichidan raqamlarni ajratib olyapmiz!
@@ -518,7 +496,7 @@ function groupBy(array: T[], key: keyof T) {
 //     // Bu joyda reduce() methodi yordamida ajratilgan numberni bir biriga qo'shib olyapmiz,
 //     // va hosil bo'lgan natijani qaytaryapmiz!
 //     return getNumber.reduce((num, ele) => num + ele);
-    
+
 // }
 // // Call
 // const result = calculate("1+3");
@@ -539,8 +517,7 @@ function groupBy(array: T[], key: keyof T) {
 // }
 // // Call
 // const result = objectToArray({ a: 10, b: 20 });
-// console.log('P-TASK:', result); 
-
+// console.log('P-TASK:', result);
 
 // O-TASK
 // Define
@@ -588,7 +565,6 @@ function groupBy(array: T[], key: keyof T) {
 // const result = getSquareNumbers([1, 2, 3]);
 // console.log('M-TASK:', result);
 
-
 // L-TASK
 // Define
 // function reverseSentence(str: string) {
@@ -614,11 +590,11 @@ function groupBy(array: T[], key: keyof T) {
 // J-TASK
 //Define
 // function findLongestWord(str: string) {
-//     // Bu yerda split(' ') methodi bizga str ni bo'sh joylar orqali bo'lib 
+//     // Bu yerda split(' ') methodi bizga str ni bo'sh joylar orqali bo'lib
 //     // bizga array qaytaradi ["I", "come", "from", "Uzbekistan"]
 //     return str.split(' ').sort((str1, str2) => str2.length - str1.length)[0];
 //     // sort() methodi yordamida arrayni ichidagi so'zlarni uzunligiga qarab tartiblab beryapti
-//     // ["Uzbekistan", "come", "from", "I"] 
+//     // ["Uzbekistan", "come", "from", "I"]
 //     // Va bizni misolda arrayni ichidagi eng uzun so'z arrayni [0] chi indexga to'g'ri keladi.
 // }
 // // Call
@@ -636,9 +612,9 @@ function groupBy(array: T[], key: keyof T) {
 // const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
 // console.log('I-TASK:', result);
 // H2-TASK
-// Define 
+// Define
 // function getDigits(str: string) {
-//     // replace methodida /\D raqam bo'lmagan barcha elementlarni olib tashlayi 
+//     // replace methodida /\D raqam bo'lmagan barcha elementlarni olib tashlayi
 //     // replace methodida /\d esa raqamlarni olib tashlaydi
 //     // replace '' bo'sh string biz hosil qilmoqchi bo'lgan qiymatni o'zini chiqarib beradi.
 //     return str.replace(/\D/g, '');
@@ -664,7 +640,7 @@ function groupBy(array: T[], key: keyof T) {
 //         // agar arraymizni  [i]nchi indexi katta bo'lsa arrayimizni indexdan
 //         // u katta emas for loop ishga tushadi.
 //         // endi arrayimizni [i]nchi indexi 1ga teng u katta emas.
-//         // for loop ishga tushmedi.  
+//         // for loop ishga tushmedi.
 //         if(arr[i] > arr[index]) {
 //             // yuqorida xosil qilib olgan o'zgaruvchimizni qiymati 0 ga tenglab olgandik
 //             // endi [i]ning qiymati 1 ga teng indeximizni qiymatini i ga tenglab olib uni return qilib olamiz.
