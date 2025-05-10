@@ -3,7 +3,7 @@ const { watch } = require("fs-extra");
 module.exports = {
   apps: [
     {
-      name: "AsianFoods",
+      name: "AsianFoods_Back",
       cwd: "./",
       script: "./dist/server.js",
       watch: false,
